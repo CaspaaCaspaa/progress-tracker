@@ -13,7 +13,7 @@ public class RowManager {
         ArrayList<Row> rowCollection = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File("PrzykladowyPlik"))) {
             while (scanner.hasNextLine()) {
-                rowCollection.add(getRows(scanner.nextLine()));
+                rowCollection.add(getRow(scanner.nextLine()));
             }
         } catch (FileNotFoundException e) {
             System.err.println("Brak pliku");
@@ -42,7 +42,7 @@ public class RowManager {
 
     }
 
-    Row getRows(String file) {
+    private Row getRow(String file) {
         Row row = new Row();
         try (Scanner sc = new Scanner(file)) {
             sc.useDelimiter(",");
@@ -55,7 +55,7 @@ public class RowManager {
             row.setProjectname(projectName);
             row.setTaskName(taskName);
             row.setTimeStart(timeStart1);
-            row.setTimeStart(timeStop2);
+            row.setTimeStop(timeStop2);
 
             if (sc.hasNext()) {
                 row.setTimeStop(sc.next());

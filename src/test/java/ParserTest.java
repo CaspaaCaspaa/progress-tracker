@@ -20,6 +20,11 @@ public class ParserTest {
     void parseCorrectString() {
         LocalDateTime expected = LocalDateTime.of(2022,6,11,21,28);
         assertEquals(expected, parser.parse("11-06-2022 21:28"));
+
+        expected = LocalDateTime.of(2022,6,3,9,8);
+        assertEquals(expected, parser.parse("03-06-2022 09:08"));
+        assertEquals(expected, parser.parse("3-6-2022 9:8"));
+
     }
 
     @Test

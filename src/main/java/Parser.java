@@ -7,7 +7,7 @@ public class Parser {
     private DateTimeFormatter formatter;
 
     public Parser() {
-        formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        formatter = DateTimeFormatter.ofPattern("d-M-yyyy H:m");
     }
 
     public LocalDateTime parse(String textedDateTime) {

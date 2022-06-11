@@ -7,7 +7,7 @@ public class App {
         }
 
         Command command = commandOptionChecker.findCommand(args);
-//        command.execute();
+        command.execute();
         System.out.println(command.getClass());
 
 
