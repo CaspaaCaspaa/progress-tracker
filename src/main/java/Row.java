@@ -8,6 +8,9 @@ public class Row {
     private LocalDateTime timeStop;
 
 
+    public Row() {
+    }
+
     public Row(String projectName, String taskName, String timeStartString, String timeStopString) {
         this.projectName = projectName;
         this.taskName = taskName;
