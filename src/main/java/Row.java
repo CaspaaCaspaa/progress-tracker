@@ -2,23 +2,23 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Row {
-    private String projectname;
+    private String projectName;
     private String taskName;
     private LocalDateTime timeStart;
     private LocalDateTime timeStop;
 
 
-    public Row(String projectname, String taskName, String timeStartString, String timeStopString) {
-        projectname = projectname;
-        taskName = taskName;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        LocalDateTime timeStart = LocalDateTime.parse(timeStartString, formatter);
-        LocalDateTime timeStop = LocalDateTime.parse(timeStopString, formatter);
+    public Row(String projectName, String taskName, String timeStartString, String timeStopString) {
+        this.projectName = projectName;
+        this.taskName = taskName;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        this.timeStart = LocalDateTime.parse(timeStartString, formatter);
+        this.timeStop = LocalDateTime.parse(timeStopString, formatter);
 
     }
 
-    public String getProjectname() {
-        return projectname;
+    public String getProjectName() {
+        return projectName;
     }
 
     public String getTaskName() {
@@ -34,7 +34,7 @@ public class Row {
     }
 
     public void setProjectname(String projectname) {
-        this.projectname = projectname;
+        this.projectName = projectname;
     }
 
     public void setTaskName(String taskName) {
@@ -63,6 +63,6 @@ public class Row {
 
     @Override
     public String toString() {
-        return projectname  + ' ' + taskName + ' ' + timeStart + '-' + timeStop +'\n';
+        return projectName  + ' ' + taskName + ' ' + timeStart + " - " + timeStop +'\n';
     }
 }
