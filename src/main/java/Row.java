@@ -53,13 +53,13 @@ public class Row {
     }
 
     public void setTimeStart(String timeStartString) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         LocalDateTime timeStart = LocalDateTime.parse(timeStartString, formatter);
         this.timeStart = timeStart;
     }
 
     public void setTimeStop(String timeStopString) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         LocalDateTime timeStop = LocalDateTime.parse(timeStopString, formatter);
         this.timeStop = timeStop;
     }
