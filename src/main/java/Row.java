@@ -14,9 +14,9 @@ public class Row {
     public Row(String projectName, String taskName, String timeStartString, String timeStopString) {
         this.projectName = projectName;
         this.taskName = taskName;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        this.timeStart = LocalDateTime.parse(timeStartString, formatter);
-        this.timeStop = LocalDateTime.parse(timeStopString, formatter);
+
+        this.timeStart = new Parser().parse(timeStartString);
+        this.timeStop = new Parser().parse(timeStopString);
 
     }
 
@@ -53,15 +53,11 @@ public class Row {
     }
 
     public void setTimeStart(String timeStartString) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        LocalDateTime timeStart = LocalDateTime.parse(timeStartString, formatter);
-        this.timeStart = timeStart;
+        this.timeStart = new Parser().parse(timeStartString);
     }
 
     public void setTimeStop(String timeStopString) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        LocalDateTime timeStop = LocalDateTime.parse(timeStopString, formatter);
-        this.timeStop = timeStop;
+         this.timeStop = new Parser().parse(timeStopString);
     }
 
     @Override

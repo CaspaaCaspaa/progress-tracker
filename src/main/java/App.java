@@ -10,5 +10,6 @@ public class App {
 //        command.execute();
         System.out.println(command.getClass());
 
+
     }
 }

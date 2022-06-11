@@ -37,12 +37,14 @@ gradle-app.setting
 ##############################
 ## IntelliJ
 ##############################
+
 out/
 .idea/
 .idea_modules/
 *.iml
 *.ipr
 *.iws
+progress-tracker.iml
 
 ##############################
 ## Eclipse
