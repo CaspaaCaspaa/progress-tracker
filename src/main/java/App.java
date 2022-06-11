@@ -1,11 +1,13 @@
-import java.util.Arrays;
-
 public class App {
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(args));
         CommandOptionChecker commandOptionChecker = new CommandOptionChecker();
-        Command command = commandOptionChecker.check(args);
+        if (!commandOptionChecker.canContinue(args)) {
+            System.exit(0);
+        }
+
+        Command command = commandOptionChecker.findCommand(args);
+//        command.execute();
         System.out.println(command.getClass());
 
     }
