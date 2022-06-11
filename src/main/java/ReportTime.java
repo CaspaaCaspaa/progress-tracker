@@ -12,18 +12,19 @@ public class ReportTime {
     public ReportTime() {
     }
 
-    public void addToReport(String projectName, Duration timespan){
-        if (!data.containsKey(projectName)){
-            data.put(projectName,timespan);
-        }
-        else {
-
-
+    public void addToReport(String projectName, Duration timespan) {
+        if (!data.containsKey(projectName)) {
+            data.put(projectName, timespan);
+        } else {
             Duration v = data.get(projectName);
-            v.plus(timespan);
+            v = v.plus(timespan);
             data.put(projectName, v);
         }
 
+    }
+
+    public Duration get(String projectName) {
+        return data.get(projectName);
     }
 
     @Override
