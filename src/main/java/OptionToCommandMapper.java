@@ -6,6 +6,7 @@ public class OptionToCommandMapper {
     public static Map<String, Command> commandMap = Map.ofEntries(
             entry("list", new ListCommand()),
             entry("current", new CurrentCommand()),
-            entry("last", new LastCommand())
+            entry("last", new LastCommand()),
+            entry("report", new ReportCommand())
     );
 }
