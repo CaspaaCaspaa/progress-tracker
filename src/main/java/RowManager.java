@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -25,9 +24,9 @@ public class RowManager {
         try(FileWriter writer = new FileWriter("TestowyPlik")) {
             for(Row rows : rowCollection){
                 writer.append(rows.getProjectName());
-                writer.append(',');
+                writer.append(",");
                 writer.append(rows.getTaskName());
-                writer.append(',');
+                writer.append(",");
                 writer.append(rows.getTimeStart().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")));
                 writer.append(",");
                 if(rows.getTimeStop() == null){
@@ -51,4 +50,3 @@ public class RowManager {
 
 }
 
-    }
