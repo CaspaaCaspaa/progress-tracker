@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class RowManager {
@@ -38,8 +39,8 @@ public class RowManager {
         sc.close();
     }
 
-        void getRows() {
-
+        List<Row> getRows() {
+            return null;
         }
 
         void printRow () {

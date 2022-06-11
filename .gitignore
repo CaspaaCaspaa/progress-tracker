@@ -4,6 +4,10 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/
+target/
+
+progress-tracker.iml
 
 # AWS User-specific
 .idea/**/aws.xml
