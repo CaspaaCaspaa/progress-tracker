@@ -29,8 +29,11 @@ public class ReportTime {
 
     @Override
     public String toString() {
-        return "ReportTime{" +
-                "data=" + data +
-                '}';
+        String info="";
+        for (String project : data.keySet()) {
+
+            info += project + " " +data.get(project) +"\n";
+        }
+        return info;
     }
 }
