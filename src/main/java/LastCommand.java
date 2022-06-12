@@ -31,7 +31,7 @@ public class LastCommand implements Command {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj identyfikator zadania: ");
         int id = scanner.nextInt();
-        System.out.print("Wybrales zadanie " + id + ": " + rowMap.get(id) + ".");
+        System.out.println("Wybrales zadanie " + id + ": " + rowMap.get(id) + ".");
         return id;
     }
 }

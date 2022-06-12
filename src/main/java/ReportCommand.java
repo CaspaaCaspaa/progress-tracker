@@ -26,7 +26,7 @@ public class ReportCommand implements Command {
         } else {
 
             for (Row row : rowList) {
-                if (parameters[0].equals("today") && row.getTimeStart().isAfter(now) && row.getTimeStop() != null) {
+                if (parameters[0].equals("today") && row.getTimeStart().isAfter(now.minusDays(1)) && row.getTimeStop() != null) {
                     Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
                     report.addToReport(row.getProjectName(), between);
                 }
