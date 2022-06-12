@@ -3,7 +3,7 @@ import java.util.List;
 
 public class ReportCommand implements Command {
     @Override
-    public void execute() {
+    public void execute(String[] parameters) {
         List<Row> rowList = rowManager.readFile();
         ReportTime report = new ReportTime();
 

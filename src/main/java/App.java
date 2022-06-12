@@ -7,9 +7,9 @@ public class App {
         }
 
         Command command = commandOptionChecker.findCommand(args);
-        command.execute();
+        String[] parameters = commandOptionChecker.extractAdditionalParameteres(args);
+
+        command.execute(parameters);
         System.out.println(command.getClass());
-
-
     }
 }

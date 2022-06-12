@@ -2,6 +2,6 @@ public interface Command {
 
     RowManager rowManager = new RowManager();
 
-    void execute();
+    void execute(String[] parameteres);
 
 }

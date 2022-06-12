@@ -4,6 +4,12 @@ public class CommandOptionChecker {
         return args[0];
     }
 
+    String[] extractAdditionalParameteres(String[] args) {
+        String[] parameters = new String[args.length-1];
+        System.arraycopy(args, 1, parameters, 0, args.length - 1);
+        return parameters;
+    }
+
     Command findCommand(String[] args) {
         String option = extractOption(args);
         return OptionToCommandMapper.commandMap.get(option);
