@@ -10,6 +10,5 @@ public class App {
         String[] parameters = commandOptionChecker.extractAdditionalParameteres(args);
 
         command.execute(parameters);
-        System.out.println(command.getClass());
     }
 }
