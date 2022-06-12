@@ -9,7 +9,7 @@
 [Zespół deweloperski](#zespol-deweloperski)  
 
 ## Opis działania
-Progress tracker pozwoli na zapisanie godzin Twojej pracy, zwróci raport Twojej pracy w całości lub według Twoich filtrów. 
+Progress tracker pozwala na zapisanie godzin Twojej pracy. Jego funkcjonalnością jest również zwracanie raportów dotyczący dni i godzin Twojej pracy w całości lub według podanych filtrów. 
 
 ### Funkcjonalności programu:  
 -zapisywanie godzin pracy,  
@@ -60,7 +60,7 @@ Wyświetlanie raportu
 tracker raport "zakres którego dotyczy"
 ```
 Wbudowane zakresy obowiązywania raportu:  
-Raport za ten tydzień (this-week) dotyczył on będzie zakresu czasu zaczynając od poniedziałku.  
+Raport za ten tydzień (this-week) dotyczył będzie zakresu czasu zaczynając od poniedziałku.  
 Raport dotyczący konkretnego okresu czasu należy konstruować poprzez podanie daty rozpoczęcia raportu oraz daty zakończenia okresu raportu w formacie dd-mm-yyyy  
 ```
 tracker raport today  
