@@ -33,10 +33,13 @@ public class ReportTime {
         int lengthDiff = 0;
 
         for (String project : data.keySet()) {
+            if (project.length()>lengthDiff) lengthDiff=project.length();
+        }
+        for (String project : data.keySet()) {
 
             info += project;
 
-        if (project.length()>lengthDiff) lengthDiff=project.length();
+
             for (int i = 0; i < (lengthDiff-project.length()+10); i++) {
                 info += " ";
             }
