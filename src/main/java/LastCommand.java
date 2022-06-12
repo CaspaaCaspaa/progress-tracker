@@ -21,7 +21,7 @@ public class LastCommand implements Command {
         }
 
         int userChoice = getUserAnswer(rowMap);
-//        Row rowToInsert = new Row(rowMap.get(userChoice).split(" ")[0], rowMap.get(userChoice).split(" ")[1])
+//        Row rowToInsert = new Row(rowMap.get(userChoice).split(" ")[0], rowMap.get(userChoice).split(" ")[1]);
 
 //        tu wywołanie option-start
 
