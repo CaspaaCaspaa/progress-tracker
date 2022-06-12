@@ -30,10 +30,27 @@ public class ReportTime {
     @Override
     public String toString() {
         String info="";
+        int lengthDiff = 0;
+
         for (String project : data.keySet()) {
 
-            info += project + " " +data.get(project) +"\n";
+            info += project;
+
+        if (project.length()>lengthDiff) lengthDiff=project.length();
+            for (int i = 0; i < (lengthDiff-project.length()+10); i++) {
+                info += " ";
+            }
+
+            long sec = data.get(project).getSeconds();
+
+            int p1 = (int) (sec % 60);
+            int godz= (int) (sec / 60);
+            int min = godz % 60;
+            godz= godz /60;
+
+            info += godz + " Godzin " + min + " minut " + "\n";
         }
+
         return info;
     }
 }
