@@ -11,5 +11,6 @@ public class OptionToCommandMapper {
             entry("start", new StartCommand()),
             entry("stop", new StopCommand()),
             entry("h", new HelpCommand())
+
     );
 }
