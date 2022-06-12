@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,9 +16,7 @@ public class RowManager {
         try (Scanner scanner = new Scanner(new File("PrzykladowyPlik"))) {
             while (scanner.hasNextLine()) {
                 rowCollection.add(getRow(scanner.nextLine()));
-                for(int i = 0; i < rowCollection.size(); i++) {
-                    System.out.print(rowCollection.get(i));
-                }
+
             }
         } catch (FileNotFoundException e) {
             System.err.println("Brak pliku");
@@ -71,9 +70,9 @@ public class RowManager {
 
         }
 
-        }
+    }
 
-        void insertRow(String projectName, String taskName, String timeStartString, String timeStopString){
+    void insertRow(String projectName, String taskName, String timeStartString, String timeStopString){
 
 
 
@@ -83,13 +82,20 @@ public class RowManager {
         readFile().add(row);
 
         saveDocument(rowCollection);
-            for(int i = 0; i < rowCollection.size(); i++) {
-                System.out.print(rowCollection.get(i));
-            }
+        for(int i = 0; i < rowCollection.size(); i++) {
+            System.out.print(rowCollection.get(i));
+        }
 
     }
 
     void updateRow(){
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        String timeStop = dateTime.format(formatter);
+
+        readFile().get(rowCollection.size() -1 ).setTimeStop(timeStop);
+        saveDocument(rowCollection);
+
 
     }
 }
