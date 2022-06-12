@@ -10,7 +10,7 @@ public class ReportCommand implements Command {
         for (Row row : rowList) {
             Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
             report.addToReport(row.getProjectName(),between);
-            System.out.println(row);
+            //System.out.println(row);
         }
 
         System.out.println(report.toString());
