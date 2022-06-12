@@ -2,7 +2,7 @@
 
 # Spis treści
 [Opis działania](#opis-dzialania)  
-[Instalacja](#instalacja)  
+[Uruchomienie](#uruchomienie)  
 [Komendy](#komendy)  
 [Przykład użycia](#przyklad-uzycia)  
 [Licencja](#licencja)  
@@ -23,88 +23,86 @@ Format pliku tekstowego .txt
 Sposób zapisu poszczególnych rekordów w pliku:  
 NazwaProjektu, NazwaZadania, CzasRozpoczecia, CzasZakonczenia
 
-## Instalacja
-Uruchomienie z wiersza poleceń:   
+## Uruchomienie
+Uruchomienie z wiersza poleceń  
 Upewnij się, że jesteś w folderze w którym znajduje się tracker.
-```
-./tracker.sh
-```
+
 
 ## Komendy
 Wyświetlanie pełnej listy komend
 ```
-tracker h
+./tracker.sh h
 ```
 Rozpoczęcie pomiaru czasu pracy
 ```
-tracker start "Nazwa projektu" "Wykonywana czynność" 
+./tracker.sh start "Nazwa projektu" "Wykonywana czynność" 
 ```
 Zakończenie pomiaru czasu pracy
 ```
-tracker stop
+./tracker.sh stop
 ```
 Wyświetlenie 9 ostatnich pozycji zapisanego pomiaru wraz z identyfikatorem
 ```
-tracker last 
+./tracker.sh last 
 ```
 Wybór pozycji po identyfikatorze pozwalający na rozpoczęscie pracy przy wskazanej pozycji
 ```
-tracker last "identyfikator"
+./tracker.sh last "identyfikator"
 ```
 Wyświetlenie listy wszystkich wpisów
 ```
-tracker list 
+./tracker.sh list 
 ```
 Wyświetlanie raportu
 ```
-tracker raport "zakres którego dotyczy"
+./tracker.sh raport "zakres którego dotyczy"
 ```
 Wbudowane zakresy obowiązywania raportu:  
 Raport za ten tydzień (this-week) dotyczył będzie zakresu czasu zaczynając od poniedziałku.  
 Raport dotyczący konkretnego okresu czasu należy konstruować poprzez podanie daty rozpoczęcia raportu oraz daty zakończenia okresu raportu w formacie dd-mm-yyyy  
 ```
-tracker raport today  
-tracker raport yesterday
-tracker raport this-week
-tracker raport last-7-days
-tracker raport this-year
-tracker raport "dd-mm-yyyy" : "dd-mm-yyyy"
-tracker raport "nazwa projektu"
+./tracker.sh raport today  
+./tracker.sh raport yesterday
+./tracker.sh raport this-week
+./tracker.sh raport last-7-days
+./tracker.sh raport this-year
+./tracker.sh raport "dd-mm-yyyy" : "dd-mm-yyyy"
+./tracker.sh raport "nazwa projektu"
 ```
 Wyświetlenie aktualnie zaczętego pomiaru
 ```
-tracker current
+./tracker.sh current
 ```
 Powrót do kontunuacji pracy nad ostatnim 
 ```
-tracker continue
+./tracker.sh continue
 ```
 Powrót do kontunuacji pracy nad wskazanym rekordem po id 
 ```
-tracker continue.id "Numer id"
+./tracker.sh continue.id "Numer id"
 ```
 Opcja trakera wskazująca na konkretny plik
 ```
-tracker -f "nazwa pliku"
+./tracker.sh -f "nazwa pliku"
 ```
 
 ## Przykład użycia
 
 Rozpoczęcie pomiaru czasu pracy
 ```
-$ tracker start Nazwa projektu Tworzenie grafiki
+./tracker.sh start Nazwa projektu Tworzenie grafiki
 
 ```
 Raporty ze wstazaniem na różne wyznaczniki czasu
 ```
-tracker raport today
-tracker raport last-7-days
-tracker raport 01-01-2022 : 12.06.2022 
+./tracker.sh raport today
+./tracker.sh raport last-7-days
+./tracker.sh raport 01-01-2022 : 12.06.2022 
 ```
 Wykorzystanie funkcji last
 ```
-tracker last
-tracker last 1
+./tracker.sh last
+./tracker.sh last 1
 ```
 
 ## Licencja
