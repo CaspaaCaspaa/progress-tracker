@@ -2,19 +2,22 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.Duration;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class RowManager {
 
+    ArrayList<Row> rowCollection = new ArrayList<>();
+
     ArrayList<Row> readFile() {
-        ArrayList<Row> rowCollection = new ArrayList<>();
+
         try (Scanner scanner = new Scanner(new File("PrzykladowyPlik"))) {
             while (scanner.hasNextLine()) {
                 rowCollection.add(getRow(scanner.nextLine()));
+                for(int i = 0; i < rowCollection.size(); i++) {
+                    System.out.print(rowCollection.get(i));
+                }
             }
         } catch (FileNotFoundException e) {
             System.err.println("Brak pliku");
@@ -23,7 +26,7 @@ public class RowManager {
     }
 
     void saveDocument(ArrayList<Row> rowCollection) {
-        try (FileWriter writer = new FileWriter("TestowyPlik")) {
+        try (FileWriter writer = new FileWriter("TestowyPlik.txt")) {
             for (Row rows : rowCollection) {
                 writer.append(rows.getProjectName());
                 writer.append(",");
@@ -31,10 +34,13 @@ public class RowManager {
                 writer.append(",");
                 writer.append(rows.getTimeStart().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")));
                 writer.append(",");
+
                 if (rows.getTimeStop() == null) {
-                    writer.append("");
+                    writer.append(",\n");
                 } else {
                     writer.append(rows.getTimeStop().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")));
+                    writer.append(",\n");
+
                 }
             }
         } catch (IOException e) {
@@ -64,6 +70,27 @@ public class RowManager {
             return row;
 
         }
+
+        }
+
+        void insertRow(String projectName, String taskName, String timeStartString, String timeStopString){
+
+
+
+        Row row = new Row(projectName, taskName, timeStartString, timeStopString);
+
+
+        readFile().add(row);
+
+        saveDocument(rowCollection);
+            for(int i = 0; i < rowCollection.size(); i++) {
+                System.out.print(rowCollection.get(i));
+            }
+
+    }
+
+    void updateRow(){
+
     }
 }
 
