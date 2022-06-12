@@ -75,13 +75,21 @@ public class RowManager {
 
         void insertRow(String projectName, String taskName, String timeStartString, String timeStopString){
 
+
+
         Row row = new Row(projectName, taskName, timeStartString, timeStopString);
+
+
         readFile().add(row);
 
         saveDocument(rowCollection);
             for(int i = 0; i < rowCollection.size(); i++) {
                 System.out.print(rowCollection.get(i));
             }
+
+    }
+
+    void updateRow(){
 
     }
 }
