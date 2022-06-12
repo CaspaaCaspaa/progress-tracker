@@ -41,6 +41,10 @@ public class LastCommand implements Command {
     private String getUserAnswer(Map<String, String> rowMap) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj identyfikator zadania: ");
+
+        int id = scanner.nextInt();
+        System.out.println("Wybrales zadanie " + id + ": " + rowMap.get(id) + ".");
+
         String id = scanner.next();
         if (!rowMap.containsKey(id)){
             System.out.println("Podano nieprawidlowy identyfikator!");
@@ -48,6 +52,7 @@ public class LastCommand implements Command {
         }
 
         System.out.print("Wybrales zadanie " + id + ": " + rowMap.get(id) + ".");
+
         return id;
     }
 }
