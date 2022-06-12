@@ -5,8 +5,8 @@ public class CurrentCommand implements Command {
     public void execute() {
         List<Row> rowList = rowManager.readFile();
         int size = rowList.size();
-
-        if ( rowList.get(size-1).getTimeStop().equals(null))
+System.out.println(rowList.get(size-1).getTimeStop());
+        if (rowList.get(size - 1).getTimeStop() == null)
             System.out.println(rowList.get(size-1));
         else System.out.println("wszystkie zakonczone");
 
