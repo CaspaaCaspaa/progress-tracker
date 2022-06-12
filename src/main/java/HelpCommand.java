@@ -1,12 +1,9 @@
-import java.util.List;
-
-public class ListCommand implements Command {
+public class HelpCommand implements Command {
     @Override
     public void execute(String[] parameters) {
-        List<Row> rowList = rowManager.readFile();
-
-        for (Row row : rowList) {
-            System.out.println(row);
+        System.out.println("Opcje, ktore mozes wybrac: ");
+        for (String s : OptionToCommandMapper.commandMap.keySet()) {
+            System.out.println(s);
         }
     }
 }

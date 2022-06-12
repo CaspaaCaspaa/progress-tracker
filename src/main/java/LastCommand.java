@@ -21,10 +21,12 @@ public class LastCommand implements Command {
         }
 
         int userChoice = getUserAnswer(rowMap);
-//        Row rowToInsert = new Row(rowMap.get(userChoice).split(" ")[0], rowMap.get(userChoice).split(" ")[1])
 
-//        tu wywołanie option-start
-
+        Command command = new StartCommand();
+        String[] params = new String[2];
+        params[0] = rowMap.get(userChoice).split(" ")[0];
+        params[1] = rowMap.get(userChoice).split(" ")[1];
+        command.execute(params);
     }
 
     private int getUserAnswer(Map<Integer, String> rowMap) {
