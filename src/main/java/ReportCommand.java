@@ -8,9 +8,14 @@ public class ReportCommand implements Command {
         ReportTime report = new ReportTime();
 
         for (Row row : rowList) {
-            Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
-            report.addToReport(row.getProjectName(),between);
-            //System.out.println(row);
+
+            if(row.getTimeStop() != null ){
+                Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
+
+                report.addToReport(row.getProjectName(),between);
+            }
+
+
         }
 
         System.out.println(report.toString());
