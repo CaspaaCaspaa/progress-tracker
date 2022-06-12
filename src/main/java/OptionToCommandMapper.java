@@ -9,6 +9,8 @@ public class OptionToCommandMapper {
             entry("last", new LastCommand()),
             entry("report", new ReportCommand()),
             entry("start", new StartCommand()),
-            entry("stop", new StopCommand())
+            entry("stop", new StopCommand()),
+            entry("h", new HelpCommand())
+
     );
 }

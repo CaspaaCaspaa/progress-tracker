@@ -18,6 +18,9 @@ public class LastCommand implements Command {
                         + row.getProjectName() + " " + row.getTaskName());
                 i++;
             }
+            if (i > 9 ) {
+                break;
+            }
         }
 
         int userChoice = getUserAnswer(rowMap);
