@@ -2,7 +2,7 @@ import java.util.List;
 
 public class LastCommand implements Command {
     @Override
-    public void execute() {
+    public void execute(String[] parameters) {
         List<Row> rowList = rowManager.readFile();
         int size = rowList.size();
         int i;
