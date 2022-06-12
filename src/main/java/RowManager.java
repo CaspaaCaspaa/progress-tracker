@@ -11,9 +11,10 @@ public class RowManager {
 
     ArrayList<Row> rowCollection = new ArrayList<>();
 
+    String file = "./PrzykladowyPlik";
     ArrayList<Row> readFile() {
 
-        try (Scanner scanner = new Scanner(new File("PrzykladowyPlik"))) {
+        try (Scanner scanner = new Scanner(new File(file))) {
             while (scanner.hasNextLine()) {
                 rowCollection.add(getRow(scanner.nextLine()));
 
@@ -25,7 +26,7 @@ public class RowManager {
     }
 
     void saveDocument(ArrayList<Row> rowCollection) {
-        try (FileWriter writer = new FileWriter("TestowyPlik.txt")) {
+        try (FileWriter writer = new FileWriter(file)) {
             for (Row rows : rowCollection) {
                 writer.append(rows.getProjectName());
                 writer.append(",");
@@ -72,19 +73,27 @@ public class RowManager {
 
     }
 
-    void insertRow(String projectName, String taskName, String timeStartString, String timeStopString){
-
+    void insertRow(String projectName, String taskName, String timeStartString, String timeStopString) {
 
 
         Row row = new Row(projectName, taskName, timeStartString, timeStopString);
 
 
         readFile().add(row);
-
+//        try {
+//            if ((readFile().get(rowCollection.size() - 2).getTimeStop()) == null) {
+//                LocalDateTime dateTime = LocalDateTime.now();
+//                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+//                String timeStop = dateTime.format(formatter);
+//                readFile().get(rowCollection.size() - 1).setTimeStop(timeStop);
+//            }
+//
+//        } catch (IOException e) {
+//            saveDocument(rowCollection);
+//
+//        }
         saveDocument(rowCollection);
-        for(int i = 0; i < rowCollection.size(); i++) {
-            System.out.print(rowCollection.get(i));
-        }
+
 
     }
 
