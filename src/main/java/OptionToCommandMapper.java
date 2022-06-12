@@ -7,6 +7,8 @@ public class OptionToCommandMapper {
             entry("list", new ListCommand()),
             entry("current", new CurrentCommand()),
             entry("last", new LastCommand()),
-            entry("report", new ReportCommand())
+            entry("report", new ReportCommand()),
+            entry("start", new StartCommand()),
+            entry("start", new StopCommand())
     );
 }
