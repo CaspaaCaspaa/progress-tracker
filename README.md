@@ -11,7 +11,7 @@
 ## Opis działania
 Progress tracker pozwoli na zapisanie godzin Twojej pracy, zwróci raport Twojej pracy w całości lub według Twoich filtrów. 
 
-###Funkcjonalności programu:  
+### Funkcjonalności programu:  
 -zapisywanie godzin pracy,  
 -tworzenie listy wszystkich zapisanych rekordów,  
 -tworzenie raportów zapisanych rekordów w odniesieniu do okresu jaki obejmuje raport (dzisiaj, wczoraj, ten tydzień - początek tygodnia zawsze wskazujący na poniedziałek, 7 ostatnich dni, ten rok, zakres podanych dat),  
@@ -69,6 +69,7 @@ tracker raport this-week
 tracker raport last-7-days
 tracker raport this-year
 tracker raport "dd-mm-yyyy" : "dd-mm-yyyy"
+tracker raport "nazwa projektu"
 ```
 Wyświetlenie aktualnie zaczętego pomiaru
 ```
