@@ -16,10 +16,8 @@ public class ReportCommand implements Command {
 
                 if (row.getTimeStop() != null) {
                     Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
-
                     report.addToReport(row.getProjectName(), between);
                 }
-
 
             }
         } else {
@@ -29,10 +27,19 @@ public class ReportCommand implements Command {
                     Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
                     report.addToReport(row.getProjectName(), between);
                 }
-                if (parameters[0].equals(row.getProjectName()) && row.getTimeStop() != null) {
+
+                if (parameters[0].equals("yesterday") &&
+                        row.getTimeStop() != null &&
+                        row.getTimeStart().isAfter(now.minusDays(2)) &&
+                        row.getTimeStop().isBefore(now.minusDays(1))) {
+
                     Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
                     report.addToReport(row.getProjectName(), between);
                 }
+//                if (parameters[1].equals("-n") && parameters[0].equals(row.getProjectName()) && row.getTimeStop() != null) {
+//                    Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
+//                    report.addToReport(row.getProjectName(), between);
+//                }
             }
 
         }
