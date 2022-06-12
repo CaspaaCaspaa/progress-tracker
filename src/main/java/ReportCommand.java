@@ -66,10 +66,10 @@ public class ReportCommand implements Command {
                 }
 
 
-//                if (parameters[1].equals("-n") && parameters[0].equals(row.getProjectName()) && row.getTimeStop() != null) {
-//                    Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
-//                    report.addToReport(row.getProjectName(), between);
-//                }
+                if (parameters[0].equals(row.getProjectName()) && row.getTimeStop() != null) {
+                    Duration between = Duration.between(row.getTimeStart(), row.getTimeStop());
+                    report.addToReport(row.getProjectName(), between);
+                }
             }
 
         }
