@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class ListCommand implements Command {
+public class HelpCommand implements Command {
     @Override
     public void execute(String[] parameters) {
         List<Row> rowList = rowManager.readFile();
