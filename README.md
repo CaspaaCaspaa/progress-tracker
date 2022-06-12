@@ -2,7 +2,7 @@
 
 # Spis treści
 [Opis działania](#opis-dzialania)  
-[Instalacja](#instalacja)  
+[Uruchomienie](#uruchomienie)  
 [Komendy](#komendy)  
 [Przykład użycia](#przyklad-uzycia)  
 [Licencja](#licencja)  
@@ -23,12 +23,10 @@ Format pliku tekstowego .txt
 Sposób zapisu poszczególnych rekordów w pliku:  
 NazwaProjektu, NazwaZadania, CzasRozpoczecia, CzasZakonczenia
 
-## Instalacja
-Uruchomienie z wiersza poleceń:   
+## Uruchomienie
+Uruchomienie z wiersza poleceń  
 Upewnij się, że jesteś w folderze w którym znajduje się tracker.
-```
-./tracker.sh
-```
+
 
 ## Komendy
 Wyświetlanie pełnej listy komend
